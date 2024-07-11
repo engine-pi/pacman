@@ -14,7 +14,7 @@ public class Ghost extends StatefulAnimation<GhostState>
 
         for (GhostState state : GhostState.values())
         {
-            addState(state, Animation.createFromImages(0.1, 1, 1, state.getImageLocation(name, 1), state.getImageLocation(name, 2)));
+            addState(state, Animation.createFromImages(0.1, 1, 1, state.getImagePath(name, 1), state.getImagePath(name, 2)));
         }
     }
 
