@@ -1,14 +1,13 @@
 package de.pirckheimer_gymnasium.pacman.actors;
 
-import de.pirckheimer_gymnasium.engine_pi.Resources;
-import de.pirckheimer_gymnasium.engine_pi.actor.Animation;
-import de.pirckheimer_gymnasium.engine_pi.actor.StatefulAnimation;
-import de.pirckheimer_gymnasium.engine_pi.util.ImageUtil;
-
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
-public abstract class Ghost extends StatefulAnimation<GhostState>
+import de.pirckheimer_gymnasium.engine_pi.Resources;
+import de.pirckheimer_gymnasium.engine_pi.actor.StatefulImagesAnimation;
+import de.pirckheimer_gymnasium.engine_pi.util.ImageUtil;
+
+public abstract class Ghost extends StatefulImagesAnimation<GhostState>
 {
     private final String name;
 
@@ -18,7 +17,7 @@ public abstract class Ghost extends StatefulAnimation<GhostState>
 
     public Ghost(String name, Color color)
     {
-        super(1, 1);
+        super(1, 1, 0.1);
         this.name = name;
         this.color = color;
         for (GhostState state : GhostState.values())
@@ -29,8 +28,8 @@ public abstract class Ghost extends StatefulAnimation<GhostState>
 
     private void addGhostState(GhostState state)
     {
-        addState(state, Animation.createFromImages(0.1, 1, 1,
-                getImage(state, 1), getImage(state, 2)));
+        addAnimation(state,
+                getImage(state, 1), getImage(state, 2));
     }
 
     public BufferedImage getImage(GhostState state, int no)
