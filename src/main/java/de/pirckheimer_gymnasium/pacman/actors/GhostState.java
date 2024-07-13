@@ -11,9 +11,8 @@ public enum GhostState
         this.fileName = fileName;
     }
 
-    public String getImagePath(String ghostName, int no)
+    public String getImagePath(int no)
     {
-        return "images/ghosts/" + ghostName + "_" + fileName + "-" + no
-                + ".png";
+        return "images/ghosts/Blinky_" + fileName + "-" + no + ".png";
     }
 }
