@@ -28,8 +28,7 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
 
     private void addGhostState(GhostState state)
     {
-        addAnimation(state,
-                getImage(state, 1), getImage(state, 2));
+        addState(state, getImage(state, 1), getImage(state, 2));
     }
 
     public BufferedImage getImage(GhostState state, int no)
@@ -40,7 +39,8 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
         {
             return Resources.IMAGES.get(virtualPath);
         }
-        return ImageUtil.replaceColor(Resources.IMAGES.get(realPath), fromColor, color);
+        return ImageUtil.replaceColor(Resources.IMAGES.get(realPath), fromColor,
+                color);
     }
 
     public String getName()
