@@ -35,7 +35,7 @@ public class GhostsDebugScene extends Scene implements KeyStrokeListener, FrameU
     @Override
     public void onFrameUpdate(double pastTime)
     {
-        switch (blinky.getCurrentState())
+        switch (blinky.getState())
         {
             case DOWN -> blinky.moveBy(0, -0.05);
             case UP -> blinky.moveBy(0, 0.05);
