@@ -47,6 +47,6 @@ public class GhostsDebugScene extends Scene
 
     public static void main(String[] args)
     {
-        Game.start(224, 288, new GhostsDebugScene());
+        Game.start(new GhostsDebugScene(), 224, 288, 3);
     }
 }
