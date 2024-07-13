@@ -9,9 +9,9 @@ import de.pirckheimer_gymnasium.pacman.actors.GhostState;
 
 import java.awt.event.KeyEvent;
 
-public class GhostsDebugScene extends Scene implements KeyStrokeListener, FrameUpdateListener
+public class GhostsDebugScene extends Scene
+        implements KeyStrokeListener, FrameUpdateListener
 {
-
     Ghost blinky;
 
     public GhostsDebugScene()
@@ -26,10 +26,10 @@ public class GhostsDebugScene extends Scene implements KeyStrokeListener, FrameU
     {
         switch (event.getKeyCode())
         {
-            case KeyEvent.VK_DOWN -> blinky.setState(GhostState.DOWN);
-            case KeyEvent.VK_UP -> blinky.setState(GhostState.UP);
-            case KeyEvent.VK_LEFT -> blinky.setState(GhostState.LEFT);
-            case KeyEvent.VK_RIGHT -> blinky.setState(GhostState.RIGHT);
+        case KeyEvent.VK_DOWN -> blinky.setState(GhostState.DOWN);
+        case KeyEvent.VK_UP -> blinky.setState(GhostState.UP);
+        case KeyEvent.VK_LEFT -> blinky.setState(GhostState.LEFT);
+        case KeyEvent.VK_RIGHT -> blinky.setState(GhostState.RIGHT);
         }
     }
 
@@ -38,10 +38,10 @@ public class GhostsDebugScene extends Scene implements KeyStrokeListener, FrameU
     {
         switch (blinky.getState())
         {
-            case DOWN -> blinky.moveBy(0, -0.05);
-            case UP -> blinky.moveBy(0, 0.05);
-            case LEFT -> blinky.moveBy(-0.05, 0);
-            case RIGHT -> blinky.moveBy(0.05, 0);
+        case DOWN -> blinky.moveBy(0, -0.05);
+        case UP -> blinky.moveBy(0, 0.05);
+        case LEFT -> blinky.moveBy(-0.05, 0);
+        case RIGHT -> blinky.moveBy(0.05, 0);
         }
     }
 
