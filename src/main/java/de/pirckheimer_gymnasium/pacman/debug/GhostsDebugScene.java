@@ -16,6 +16,7 @@ public class GhostsDebugScene extends Scene implements KeyStrokeListener, FrameU
 
     public GhostsDebugScene()
     {
+        getCamera().setMeter(16);
         blinky = new Ghost("Blinky");
         add(blinky);
     }
@@ -46,6 +47,6 @@ public class GhostsDebugScene extends Scene implements KeyStrokeListener, FrameU
 
     public static void main(String[] args)
     {
-        Game.start(new GhostsDebugScene());
+        Game.start(224, 288, new GhostsDebugScene());
     }
 }
