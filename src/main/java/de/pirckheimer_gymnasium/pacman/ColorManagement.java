@@ -3,9 +3,10 @@ package de.pirckheimer_gymnasium.pacman;
 import de.pirckheimer_gymnasium.engine_pi.Resources;
 import de.pirckheimer_gymnasium.engine_pi.resources.ColorContainer;
 
-public class ColorManagement {
-
-    public static ColorContainer setColors() {
+public class ColorManagement
+{
+    public static ColorContainer setColors()
+    {
         ColorContainer container = Resources.COLORS;
         container.clear();
         // AllAssetsPalettes.png
