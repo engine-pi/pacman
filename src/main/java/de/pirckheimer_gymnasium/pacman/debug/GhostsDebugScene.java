@@ -1,18 +1,18 @@
 package de.pirckheimer_gymnasium.pacman.debug;
 
-import de.pirckheimer_gymnasium.engine_pi.Game;
+import java.awt.event.KeyEvent;
+import java.lang.reflect.InvocationTargetException;
+
 import de.pirckheimer_gymnasium.engine_pi.Scene;
 import de.pirckheimer_gymnasium.engine_pi.event.FrameUpdateListener;
 import de.pirckheimer_gymnasium.engine_pi.event.KeyStrokeListener;
-import de.pirckheimer_gymnasium.pacman.actors.Ghost;
+import de.pirckheimer_gymnasium.pacman.Pacman;
 import de.pirckheimer_gymnasium.pacman.actors.Blinky;
 import de.pirckheimer_gymnasium.pacman.actors.Clyde;
+import de.pirckheimer_gymnasium.pacman.actors.Ghost;
+import de.pirckheimer_gymnasium.pacman.actors.GhostState;
 import de.pirckheimer_gymnasium.pacman.actors.Inky;
 import de.pirckheimer_gymnasium.pacman.actors.Pinky;
-import de.pirckheimer_gymnasium.pacman.actors.GhostState;
-
-import java.awt.event.KeyEvent;
-import java.lang.reflect.InvocationTargetException;
 
 public class GhostsDebugScene extends Scene
         implements KeyStrokeListener, FrameUpdateListener
@@ -82,6 +82,6 @@ public class GhostsDebugScene extends Scene
 
     public static void main(String[] args)
     {
-        Game.start(new GhostsDebugScene(), 224, 288, 3);
+        Pacman.start(new GhostsDebugScene(), 3);
     }
 }
