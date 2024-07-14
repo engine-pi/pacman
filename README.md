@@ -33,6 +33,9 @@ Auflösung: 224 × 288 (Vertikal), 16 Farben[^wikipedia]
 
 ## Farben
 
+[^almightyguru]
+[^aarongiles]
+
 | Index | Color  | Converted RGB | Binary / Hex / Decimal | Uses                                                        |
 | ----- | ------ | ------------- | ---------------------- | ----------------------------------------------------------- |
 | 0     | Black  | 0, 0, 0       | 00000000 0x00 0        | Background                                                  |
@@ -51,8 +54,6 @@ Auflösung: 224 × 288 (Vertikal), 16 Farben[^wikipedia]
 | D     | Teal   | 72, 180, 170  | 10101010 0xAA 170      | Melon wrinkles and stem                                     |
 | E     | Salmon | 252, 180, 170 | 10101111 0xAF 175      | Dots, ghost body, ghost face when flashing                  |
 | F     | White  | 252, 252, 255 | 11111111 0xFF 255      | Flashing ghosts, scores, text, ghost eyes, fruit highlights |
-[^almightyguru]
-[^aarongiles]
 
 [^almightyguru]: http://www.thealmightyguru.com/Wiki/index.php?title=Pac-Man#Color_Palette
 [^aarongiles]: https://aarongiles.com/mamemem/part3.html
