@@ -8,6 +8,7 @@ public class Pacman
     public static void start(Scene scene, int pixelMultiplication)
     {
         ColorManagement.setColors();
+        scene.getCamera().setMeter(16);
         Game.start(scene, 224, 288, pixelMultiplication);
     }
 

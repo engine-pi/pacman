@@ -2,6 +2,7 @@ package de.pirckheimer_gymnasium.pacman.actors;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.lang.reflect.InvocationTargetException;
 
 import de.pirckheimer_gymnasium.engine_pi.Resources;
 import de.pirckheimer_gymnasium.engine_pi.actor.StatefulImagesAnimation;
@@ -9,6 +10,25 @@ import de.pirckheimer_gymnasium.engine_pi.util.ImageUtil;
 
 public abstract class Ghost extends StatefulImagesAnimation<GhostState>
 {
+    public static Ghost createGhost(Class<? extends Ghost> clazz)
+    {
+        {
+            Ghost ghost;
+            try
+            {
+                ghost = clazz.getDeclaredConstructor().newInstance();
+                return ghost;
+            }
+            catch (InstantiationException | IllegalAccessException
+                    | IllegalArgumentException | InvocationTargetException
+                    | NoSuchMethodException | SecurityException e)
+            {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
     private final String name;
 
     private final Color color;

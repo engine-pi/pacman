@@ -7,7 +7,6 @@ import static de.pirckheimer_gymnasium.pacman.actors.GhostState.STAND;
 import static de.pirckheimer_gymnasium.pacman.actors.GhostState.UP;
 
 import java.awt.event.KeyEvent;
-import java.lang.reflect.InvocationTargetException;
 
 import de.pirckheimer_gymnasium.engine_pi.Scene;
 import de.pirckheimer_gymnasium.engine_pi.event.FrameUpdateListener;
@@ -44,21 +43,11 @@ public class GhostsDebugScene extends Scene
 
     private Ghost addGhost(Class<? extends Ghost> clazz, int x, int y)
     {
-        Ghost ghost;
-        try
-        {
-            ghost = clazz.getDeclaredConstructor().newInstance();
-            ghost.setPosition(x, y);
-            add(ghost);
-            return ghost;
-        }
-        catch (InstantiationException | IllegalAccessException
-                | IllegalArgumentException | InvocationTargetException
-                | NoSuchMethodException | SecurityException e)
-        {
-            e.printStackTrace();
-        }
-        return null;
+        Ghost ghost = Ghost.createGhost(clazz);
+        assert ghost != null;
+        ghost.setPosition(x, y);
+        add(ghost);
+        return ghost;
     }
 
     private void setCurrent(Ghost ghost)
