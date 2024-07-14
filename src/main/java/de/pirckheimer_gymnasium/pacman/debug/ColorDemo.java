@@ -1,19 +1,17 @@
 package de.pirckheimer_gymnasium.pacman.debug;
 
-import de.pirckheimer_gymnasium.engine_pi.Scene;
-import de.pirckheimer_gymnasium.engine_pi.debug.ColorContainerVisualizer;
-import de.pirckheimer_gymnasium.pacman.ColorManagement;
-import de.pirckheimer_gymnasium.pacman.Pacman;
+import de.pirckheimer_gymnasium.engine_pi.Game;
+import de.pirckheimer_gymnasium.pacman.scenes.BaseScene;
 
-public class ColorDemo extends Scene
+public class ColorDemo extends BaseScene
 {
     public ColorDemo()
     {
-        new ColorContainerVisualizer(this);
+        addText("Blinky").setColor("teal");
     }
 
     public static void main(String[] args)
     {
-        Pacman.start(new ColorDemo(), 3);
+        Game.start(new ColorDemo(), 1000, 1000);
     }
 }

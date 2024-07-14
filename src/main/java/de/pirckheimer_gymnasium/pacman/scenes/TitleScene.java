@@ -16,7 +16,7 @@ public class TitleScene extends Scene
         font = Font.getFont();
         setBackgroundColor("gray");
         ImageFontText text = new ImageFontText(font, "Blinky");
-        text.setImageSize(32);
+        text.setImageSize(16);
         text.setPosition(0, 2);
         add(text);
         add(new Blinky());

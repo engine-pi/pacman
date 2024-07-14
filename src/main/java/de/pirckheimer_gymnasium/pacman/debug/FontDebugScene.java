@@ -11,7 +11,7 @@ public class FontDebugScene extends Scene
 {
     public FontDebugScene()
     {
-        getCamera().setMeter(16);
+        getCamera().setMeter(8);
         ImageFont font = Font.getFont();
         setBackgroundColor("gray");
         ImageFontText text = new ImageFontText(font, "Blinky");
@@ -20,6 +20,7 @@ public class FontDebugScene extends Scene
 
     public static void main(String[] args)
     {
-        Pacman.start(new FontDebugScene(), 3);
+        Pacman.start(new FontDebugScene(), 1);
     }
 }
+

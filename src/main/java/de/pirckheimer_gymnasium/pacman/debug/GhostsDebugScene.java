@@ -1,5 +1,11 @@
 package de.pirckheimer_gymnasium.pacman.debug;
 
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.DOWN;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.LEFT;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.RIGHT;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.STAND;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.UP;
+
 import java.awt.event.KeyEvent;
 import java.lang.reflect.InvocationTargetException;
 
@@ -10,7 +16,6 @@ import de.pirckheimer_gymnasium.pacman.Pacman;
 import de.pirckheimer_gymnasium.pacman.actors.Blinky;
 import de.pirckheimer_gymnasium.pacman.actors.Clyde;
 import de.pirckheimer_gymnasium.pacman.actors.Ghost;
-import de.pirckheimer_gymnasium.pacman.actors.GhostState;
 import de.pirckheimer_gymnasium.pacman.actors.Inky;
 import de.pirckheimer_gymnasium.pacman.actors.Pinky;
 
@@ -56,15 +61,27 @@ public class GhostsDebugScene extends Scene
         return null;
     }
 
+    private void setCurrent(Ghost ghost)
+    {
+        current.setState(STAND);
+        current = ghost;
+        current.setState(UP);
+    }
+
     @Override
     public void onKeyDown(KeyEvent event)
     {
         switch (event.getKeyCode())
         {
-        case KeyEvent.VK_DOWN -> current.setState(GhostState.DOWN);
-        case KeyEvent.VK_UP -> current.setState(GhostState.UP);
-        case KeyEvent.VK_LEFT -> current.setState(GhostState.LEFT);
-        case KeyEvent.VK_RIGHT -> current.setState(GhostState.RIGHT);
+        case KeyEvent.VK_SPACE -> current.setState(STAND);
+        case KeyEvent.VK_DOWN -> current.setState(DOWN);
+        case KeyEvent.VK_UP -> current.setState(UP);
+        case KeyEvent.VK_LEFT -> current.setState(LEFT);
+        case KeyEvent.VK_RIGHT -> current.setState(RIGHT);
+        case KeyEvent.VK_1 -> setCurrent(blinky);
+        case KeyEvent.VK_2 -> setCurrent(clyde);
+        case KeyEvent.VK_3 -> setCurrent(inky);
+        case KeyEvent.VK_4 -> setCurrent(pinky);
         }
     }
 
@@ -73,6 +90,8 @@ public class GhostsDebugScene extends Scene
     {
         switch (current.getState())
         {
+        case STAND -> {
+        }
         case DOWN -> current.moveBy(0, -0.05);
         case UP -> current.moveBy(0, 0.05);
         case LEFT -> current.moveBy(-0.05, 0);
@@ -82,6 +101,6 @@ public class GhostsDebugScene extends Scene
 
     public static void main(String[] args)
     {
-        Pacman.start(new GhostsDebugScene(), 3);
+        Pacman.start(new GhostsDebugScene(), 1);
     }
 }

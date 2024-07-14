@@ -2,7 +2,7 @@ package de.pirckheimer_gymnasium.pacman.actors;
 
 public enum GhostState
 {
-    UP("up"), LEFT("left"), RIGHT("right"), DOWN("down");
+    STAND("right"), UP("up"), LEFT("left"), RIGHT("right"), DOWN("down");
 
     private final String fileName;
 

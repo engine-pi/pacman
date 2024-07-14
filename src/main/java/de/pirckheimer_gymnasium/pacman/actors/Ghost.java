@@ -28,7 +28,14 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
 
     private void addGhostState(GhostState state)
     {
-        addState(state, getImage(state, 1), getImage(state, 2));
+        if (state == GhostState.STAND)
+        {
+            addState(state, getImage(state, 1));
+        }
+        else
+        {
+            addState(state, getImage(state, 1), getImage(state, 2));
+        }
     }
 
     public BufferedImage getImage(GhostState state, int no)
