@@ -10,11 +10,17 @@ public class Text extends ImageFontText
 {
     private static final ImageFont font = new ImageFont("images/glyphs",
             ImageFontCaseSensitivity.TO_UPPER);
+    static
+    {
+        font.addMapping('-', "dash");
+        font.addMapping('"', "quotes");
+        font.addMapping('/', "slash");
+    }
 
     public Text(String content, String color)
     {
-        super(font, content, 20, TextAlignment.LEFT,
-                Resources.COLORS.get(color), 1, 16);
+        super(font, content, 28, TextAlignment.LEFT,
+                Resources.COLORS.get(color), 1, 8);
     }
 
     public Text(String content)

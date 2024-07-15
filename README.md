@@ -31,6 +31,12 @@ Arcade-System CPU: Zilog Z80 getaktet mit 3,072 MHz
 Monitor Raster,
 Auflösung: 224 × 288 (Vertikal), 16 Farben[^wikipedia]
 
+## Abmessungen
+
+Schrift 8x8 Geister 16x16
+
+224 × 288 = (28 * 8) x (36 * 8)
+
 ## Farben
 
 [^almightyguru]
