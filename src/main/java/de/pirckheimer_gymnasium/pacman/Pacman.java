@@ -9,6 +9,9 @@ public class Pacman
     {
         ColorManagement.setColors();
         scene.getCamera().setMeter(16);
+
+        // 224 = 14 * 16
+        // 288 = 18 * 16
         Game.start(scene, 224, 288, pixelMultiplication);
     }
 
