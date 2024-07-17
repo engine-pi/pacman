@@ -5,8 +5,9 @@ import de.pirckheimer_gymnasium.pacman.ColorManagement;
 
 public class BaseScene extends Scene
 {
-    static
+    public BaseScene()
     {
         ColorManagement.setColors();
+        getCamera().setPostion(14, 18);
     }
 }

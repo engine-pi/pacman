@@ -37,7 +37,7 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
 
     public Ghost(String name, Color color)
     {
-        super(1, 1, 0.1);
+        super(2, 2, 0.1);
         this.name = name;
         this.color = color;
         for (GhostState state : GhostState.values())
