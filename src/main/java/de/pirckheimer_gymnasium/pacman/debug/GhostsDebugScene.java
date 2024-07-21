@@ -90,6 +90,6 @@ public class GhostsDebugScene extends Scene
 
     public static void main(String[] args)
     {
-        Pacman.start(new GhostsDebugScene(), 1);
+        Pacman.start(new GhostsDebugScene(), 4);
     }
 }
