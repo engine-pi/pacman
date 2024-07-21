@@ -8,14 +8,8 @@ import de.pirckheimer_gymnasium.engine_pi.util.TextAlignment;
 
 public class Text extends ImageFontText
 {
-    private static final ImageFont font = new ImageFont("images/glyphs",
+    private static final ImageFont font = new ImageFont("images/image-font",
             ImageFontCaseSensitivity.TO_UPPER);
-    static
-    {
-        font.addMapping('-', "dash");
-        font.addMapping('"', "quotes");
-        font.addMapping('/', "slash");
-    }
 
     public Text(String content, String color)
     {
