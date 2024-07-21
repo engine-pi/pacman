@@ -1,6 +1,6 @@
 package de.pirckheimer_gymnasium.pacman.scenes;
 
-import de.pirckheimer_gymnasium.pacman.Pacman;
+import de.pirckheimer_gymnasium.pacman.Main;
 import de.pirckheimer_gymnasium.pacman.actors.Blinky;
 import de.pirckheimer_gymnasium.pacman.actors.Clyde;
 import de.pirckheimer_gymnasium.pacman.actors.Ghost;
@@ -52,6 +52,6 @@ public class InstructionScene extends BaseScene
 
     public static void main(String[] args)
     {
-        Pacman.start(new InstructionScene(), 4);
+        Main.start(new InstructionScene(), 4);
     }
 }

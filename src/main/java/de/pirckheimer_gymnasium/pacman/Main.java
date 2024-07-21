@@ -3,7 +3,7 @@ package de.pirckheimer_gymnasium.pacman;
 import de.pirckheimer_gymnasium.engine_pi.Game;
 import de.pirckheimer_gymnasium.engine_pi.Scene;
 
-public class Pacman
+public class Main
 {
     public static void start(Scene scene, int pixelMultiplication)
     {

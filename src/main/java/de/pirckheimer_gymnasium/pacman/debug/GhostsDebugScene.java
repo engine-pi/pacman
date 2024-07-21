@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 import de.pirckheimer_gymnasium.engine_pi.Scene;
 import de.pirckheimer_gymnasium.engine_pi.event.FrameUpdateListener;
 import de.pirckheimer_gymnasium.engine_pi.event.KeyStrokeListener;
-import de.pirckheimer_gymnasium.pacman.Pacman;
+import de.pirckheimer_gymnasium.pacman.Main;
 import de.pirckheimer_gymnasium.pacman.actors.Blinky;
 import de.pirckheimer_gymnasium.pacman.actors.Clyde;
 import de.pirckheimer_gymnasium.pacman.actors.Ghost;
@@ -90,6 +90,6 @@ public class GhostsDebugScene extends Scene
 
     public static void main(String[] args)
     {
-        Pacman.start(new GhostsDebugScene(), 4);
+        Main.start(new GhostsDebugScene(), 4);
     }
 }
