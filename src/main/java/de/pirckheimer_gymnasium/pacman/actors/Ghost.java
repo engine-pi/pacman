@@ -6,9 +6,11 @@ import java.lang.reflect.InvocationTargetException;
 
 import de.pirckheimer_gymnasium.engine_pi.Resources;
 import de.pirckheimer_gymnasium.engine_pi.actor.StatefulImagesAnimation;
+import de.pirckheimer_gymnasium.engine_pi.event.FrameUpdateListener;
 import de.pirckheimer_gymnasium.engine_pi.util.ImageUtil;
 
 public abstract class Ghost extends StatefulImagesAnimation<GhostState>
+        implements FrameUpdateListener
 {
     public static Ghost createGhost(Class<? extends Ghost> clazz)
     {
@@ -44,6 +46,7 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
         {
             addGhostState(state);
         }
+        makeDynamic();
     }
 
     private void addGhostState(GhostState state)
@@ -68,6 +71,33 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
         }
         return ImageUtil.replaceColor(Resources.IMAGES.get(realPath), fromColor,
                 color);
+    }
+
+    public void reverse()
+    {
+        switch (getState())
+        {
+        case STAND -> {
+        }
+        case DOWN -> setState(GhostState.UP);
+        case UP -> setState(GhostState.DOWN);
+        case LEFT -> setState(GhostState.RIGHT);
+        case RIGHT -> setState(GhostState.LEFT);
+        }
+    }
+
+    @Override
+    public void onFrameUpdate(double pastTime)
+    {
+        switch (getState())
+        {
+        case STAND -> {
+        }
+        case DOWN -> moveBy(0, -0.05);
+        case UP -> moveBy(0, 0.05);
+        case LEFT -> moveBy(-0.05, 0);
+        case RIGHT -> moveBy(0.05, 0);
+        }
     }
 
     public String getName()

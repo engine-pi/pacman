@@ -1,7 +1,14 @@
 package de.pirckheimer_gymnasium.pacman.scenes;
 
 import de.pirckheimer_gymnasium.engine_pi.actor.Image;
+import de.pirckheimer_gymnasium.engine_pi.event.KeyStrokeListener;
 import de.pirckheimer_gymnasium.pacman.Main;
+import de.pirckheimer_gymnasium.pacman.actors.Blinky;
+import de.pirckheimer_gymnasium.pacman.actors.Ghost;
+
+import java.awt.event.KeyEvent;
+
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.*;
 
 class Wall extends Image
 {
@@ -11,10 +18,21 @@ class Wall extends Image
     }
 }
 
-public class IngameScene extends BaseScene
+public class IngameScene extends BaseScene implements KeyStrokeListener
 {
+    Ghost ghost;
+
     public IngameScene()
     {
+        ghost = new Blinky();
+        ghost.setPosition(10, 10);
+        ghost.addCollisionListener((event) -> {
+            if (event.getColliding() instanceof Wall)
+            {
+                ghost.reverse();
+            }
+        });
+        add(ghost);
         // abgerundete Rechtecke, Querformat
         // von links nach rechts
         drawRoundedRectangle(2, 26, 4, 3);
@@ -96,6 +114,19 @@ public class IngameScene extends BaseScene
         // rechte obere Ecke
         draw("single_BL", x + width - 1, y + height - 1);
         drawVertical("single_R", x, y + 1, height - 2);
+    }
+
+    @Override
+    public void onKeyDown(KeyEvent event)
+    {
+        switch (event.getKeyCode())
+        {
+        case KeyEvent.VK_SPACE -> ghost.setState(STAND);
+        case KeyEvent.VK_DOWN -> ghost.setState(DOWN);
+        case KeyEvent.VK_UP -> ghost.setState(UP);
+        case KeyEvent.VK_LEFT -> ghost.setState(LEFT);
+        case KeyEvent.VK_RIGHT -> ghost.setState(RIGHT);
+        }
     }
 
     public static void main(String[] args)

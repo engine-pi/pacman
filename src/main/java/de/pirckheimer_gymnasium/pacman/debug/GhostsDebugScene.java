@@ -18,8 +18,7 @@ import de.pirckheimer_gymnasium.pacman.actors.Ghost;
 import de.pirckheimer_gymnasium.pacman.actors.Inky;
 import de.pirckheimer_gymnasium.pacman.actors.Pinky;
 
-public class GhostsDebugScene extends Scene
-        implements KeyStrokeListener, FrameUpdateListener
+public class GhostsDebugScene extends Scene implements KeyStrokeListener
 {
     Ghost blinky;
 
@@ -71,20 +70,6 @@ public class GhostsDebugScene extends Scene
         case KeyEvent.VK_2 -> setCurrent(clyde);
         case KeyEvent.VK_3 -> setCurrent(inky);
         case KeyEvent.VK_4 -> setCurrent(pinky);
-        }
-    }
-
-    @Override
-    public void onFrameUpdate(double pastTime)
-    {
-        switch (current.getState())
-        {
-        case STAND -> {
-        }
-        case DOWN -> current.moveBy(0, -0.05);
-        case UP -> current.moveBy(0, 0.05);
-        case LEFT -> current.moveBy(-0.05, 0);
-        case RIGHT -> current.moveBy(0.05, 0);
         }
     }
 
