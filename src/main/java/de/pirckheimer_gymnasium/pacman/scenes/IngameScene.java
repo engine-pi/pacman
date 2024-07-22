@@ -30,6 +30,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
             if (event.getColliding() instanceof Wall)
             {
                 ghost.reverse();
+                System.out.println(event);
             }
         });
         add(ghost);
