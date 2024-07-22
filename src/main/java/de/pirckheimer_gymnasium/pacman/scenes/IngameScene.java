@@ -1,14 +1,18 @@
 package de.pirckheimer_gymnasium.pacman.scenes;
 
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.DOWN;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.LEFT;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.RIGHT;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.STAND;
+import static de.pirckheimer_gymnasium.pacman.actors.GhostState.UP;
+
+import java.awt.event.KeyEvent;
+
 import de.pirckheimer_gymnasium.engine_pi.actor.Image;
 import de.pirckheimer_gymnasium.engine_pi.event.KeyStrokeListener;
 import de.pirckheimer_gymnasium.pacman.Main;
 import de.pirckheimer_gymnasium.pacman.actors.Blinky;
 import de.pirckheimer_gymnasium.pacman.actors.Ghost;
-
-import java.awt.event.KeyEvent;
-
-import static de.pirckheimer_gymnasium.pacman.actors.GhostState.*;
 
 class Wall extends Image
 {
