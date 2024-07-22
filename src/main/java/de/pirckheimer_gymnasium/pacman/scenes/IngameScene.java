@@ -137,7 +137,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
 
     public static void main(String[] args)
     {
-        Game.setDebug(true);
+        Game.debug();
         Main.start(new IngameScene(), 4);
     }
 }

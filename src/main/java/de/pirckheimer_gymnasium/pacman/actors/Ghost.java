@@ -28,7 +28,7 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
             addGhostState(state);
         }
         makeDynamic();
-        setRotationLocked(true);
+        lockRotation();
     }
 
     private void addGhostState(GhostState state)
