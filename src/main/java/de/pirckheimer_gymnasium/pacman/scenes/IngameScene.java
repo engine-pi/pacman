@@ -5,22 +5,23 @@ import static de.pirckheimer_gymnasium.pacman.actors.GhostState.LEFT;
 import static de.pirckheimer_gymnasium.pacman.actors.GhostState.RIGHT;
 import static de.pirckheimer_gymnasium.pacman.actors.GhostState.STAND;
 import static de.pirckheimer_gymnasium.pacman.actors.GhostState.UP;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_B;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_BL;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_BR;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_L;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_R;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_T;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_TL;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_TR;
 
 import java.awt.event.KeyEvent;
 
+import de.pirckheimer_gymnasium.engine_pi.Game;
 import de.pirckheimer_gymnasium.engine_pi.actor.Image;
 import de.pirckheimer_gymnasium.engine_pi.event.KeyStrokeListener;
 import de.pirckheimer_gymnasium.pacman.Main;
 import de.pirckheimer_gymnasium.pacman.actors.Blinky;
 import de.pirckheimer_gymnasium.pacman.actors.Ghost;
-
-class Wall extends Image
-{
-    public Wall(String filename)
-    {
-        super("images/maze/" + filename + ".png", 8);
-    }
-}
 
 public class IngameScene extends BaseScene implements KeyStrokeListener
 {
@@ -31,7 +32,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         ghost = new Blinky();
         ghost.setPosition(10, 10);
         ghost.addCollisionListener((event) -> {
-            if (event.getColliding() instanceof Wall)
+            if (event.getColliding() instanceof Image)
             {
                 ghost.reverse();
                 System.out.println(event);
@@ -58,12 +59,12 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         drawRoundedRectangle(16, 8, 5, 2);
     }
 
-    private void draw(String fileName, double x, double y)
+    private void setBrick(Brick brick, double x, double y)
     {
-        Wall wall = new Wall(fileName);
-        wall.setPosition(x, y);
-        wall.makeStatic();
-        add(wall);
+        Image image = brick.getImage();
+        image.setPosition(x, y);
+        image.makeStatic();
+        add(image);
     }
 
     /**
@@ -75,11 +76,11 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
      * @param y        Die y-Koordinate der linken Ecke.
      * @param length   Die Länge der Linie.
      */
-    private void drawHorizontal(String filename, int x, int y, int length)
+    private void drawHorizontal(Brick brick, int x, int y, int length)
     {
         for (int i = 0; i < length; i++)
         {
-            draw(filename, x + i, y);
+            setBrick(brick, x + i, y);
         }
     }
 
@@ -92,11 +93,11 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
      * @param y        Die y-Koordinate der unteren Ecke.
      * @param length   Die Länge der Linie.
      */
-    private void drawVertical(String filename, int x, int y, int length)
+    private void drawVertical(Brick brick, int x, int y, int length)
     {
         for (int i = 0; i < length; i++)
         {
-            draw(filename, x, y + i);
+            setBrick(brick, x, y + i);
         }
     }
 
@@ -108,17 +109,17 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                     "width und height muss mindestens 2 sein.");
         }
         // linke untere Ecke
-        draw("single_TR", x, y);
-        drawHorizontal("single_T", x + 1, y, width - 2);
+        setBrick(SINGLE_BL, x, y);
+        drawHorizontal(SINGLE_B, x + 1, y, width - 2);
         // linke untere Ecke
-        draw("single_TL", x + width - 1, y);
-        drawVertical("single_L", x + width - 1, y + 1, height - 2);
+        setBrick(SINGLE_BR, x + width - 1, y);
+        drawVertical(SINGLE_R, x + width - 1, y + 1, height - 2);
         // linke obere Ecke
-        draw("single_BR", x, y + height - 1);
-        drawHorizontal("single_B", x + 1, y + height - 1, width - 2);
+        setBrick(SINGLE_TL, x, y + height - 1);
+        drawHorizontal(SINGLE_T, x + 1, y + height - 1, width - 2);
         // rechte obere Ecke
-        draw("single_BL", x + width - 1, y + height - 1);
-        drawVertical("single_R", x, y + 1, height - 2);
+        setBrick(SINGLE_TR, x + width - 1, y + height - 1);
+        drawVertical(SINGLE_L, x, y + 1, height - 2);
     }
 
     @Override
@@ -136,6 +137,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
 
     public static void main(String[] args)
     {
+        Game.setDebug(true);
         Main.start(new IngameScene(), 4);
     }
 }

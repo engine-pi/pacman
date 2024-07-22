@@ -12,25 +12,6 @@ import de.pirckheimer_gymnasium.engine_pi.util.ImageUtil;
 public abstract class Ghost extends StatefulImagesAnimation<GhostState>
         implements FrameUpdateListener
 {
-    public static Ghost createGhost(Class<? extends Ghost> clazz)
-    {
-        {
-            Ghost ghost;
-            try
-            {
-                ghost = clazz.getDeclaredConstructor().newInstance();
-                return ghost;
-            }
-            catch (InstantiationException | IllegalAccessException
-                    | IllegalArgumentException | InvocationTargetException
-                    | NoSuchMethodException | SecurityException e)
-            {
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
-
     private final String name;
 
     private final Color color;
@@ -47,6 +28,7 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
             addGhostState(state);
         }
         makeDynamic();
+        setRotationLocked(true);
     }
 
     private void addGhostState(GhostState state)
@@ -97,6 +79,25 @@ public abstract class Ghost extends StatefulImagesAnimation<GhostState>
         case UP -> moveBy(0, 0.05);
         case LEFT -> moveBy(-0.05, 0);
         case RIGHT -> moveBy(0.05, 0);
+        }
+    }
+
+    public static Ghost createGhost(Class<? extends Ghost> clazz)
+    {
+        {
+            Ghost ghost;
+            try
+            {
+                ghost = clazz.getDeclaredConstructor().newInstance();
+                return ghost;
+            }
+            catch (InstantiationException | IllegalAccessException
+                    | IllegalArgumentException | InvocationTargetException
+                    | NoSuchMethodException | SecurityException e)
+            {
+                e.printStackTrace();
+            }
+            return null;
         }
     }
 
