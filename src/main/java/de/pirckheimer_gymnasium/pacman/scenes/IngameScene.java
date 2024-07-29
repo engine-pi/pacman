@@ -27,6 +27,8 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
 {
     Ghost ghost;
 
+    Image screenshot;
+
     public IngameScene()
     {
         ghost = new Blinky();
@@ -41,22 +43,24 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         add(ghost);
         // abgerundete Rechtecke, Querformat
         // von links nach rechts
-        drawRoundedRectangle(2, 26, 4, 3);
-        drawRoundedRectangle(7, 26, 5, 3);
-        drawRoundedRectangle(16, 26, 5, 3);
-        drawRoundedRectangle(22, 26, 4, 3);
+        drawRoundedRectangle(2, 28, 4, 3);
+        drawRoundedRectangle(7, 28, 5, 3);
+        drawRoundedRectangle(16, 28, 5, 3);
+        drawRoundedRectangle(22, 28, 4, 3);
         // abgerundete Rechtecke, Querformat
         // von links nach rechts
-        drawRoundedRectangle(2, 23, 4, 2);
-        drawRoundedRectangle(22, 23, 4, 2);
+        drawRoundedRectangle(2, 25, 4, 2);
+        drawRoundedRectangle(22, 25, 4, 2);
         // abgerundete Rechtecke, Hochformat
         // von links nach rechts
-        drawRoundedRectangle(7, 12, 2, 5);
-        drawRoundedRectangle(19, 12, 2, 5);
+        drawRoundedRectangle(7, 13, 2, 5);
+        drawRoundedRectangle(19, 13, 2, 5);
         // abgerundete Rechtecke, Querformat
         // von links nach rechts
-        drawRoundedRectangle(7, 8, 5, 2);
-        drawRoundedRectangle(16, 8, 5, 2);
+        drawRoundedRectangle(7, 10, 5, 2);
+        drawRoundedRectangle(16, 10, 5, 2);
+        screenshot = new Image("images/screenshots/IngameReady.png", 8);
+        add(screenshot);
     }
 
     private void setBrick(Brick brick, double x, double y)
@@ -132,6 +136,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         case KeyEvent.VK_UP -> ghost.setState(UP);
         case KeyEvent.VK_LEFT -> ghost.setState(LEFT);
         case KeyEvent.VK_RIGHT -> ghost.setState(RIGHT);
+        case KeyEvent.VK_S -> screenshot.toggleVisible();
         }
     }
 
