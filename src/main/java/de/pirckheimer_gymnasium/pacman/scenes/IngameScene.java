@@ -6,13 +6,13 @@ import static de.pirckheimer_gymnasium.pacman.actors.GhostState.RIGHT;
 import static de.pirckheimer_gymnasium.pacman.actors.GhostState.STAND;
 import static de.pirckheimer_gymnasium.pacman.actors.GhostState.UP;
 import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_B;
-import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_BL;
-import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_BR;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.OUTER_CORNER_BL;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.OUTER_CORNER_BR;
 import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_L;
 import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_R;
 import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_T;
-import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_TL;
-import static de.pirckheimer_gymnasium.pacman.scenes.Brick.SINGLE_TR;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.OUTER_CORNER_TL;
+import static de.pirckheimer_gymnasium.pacman.scenes.Brick.OUTER_CORNER_TR;
 import static de.pirckheimer_gymnasium.pacman.scenes.Brick.*;
 
 import java.awt.event.KeyEvent;
@@ -42,7 +42,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
             }
         });
         add(ghost);
-        setRow(32, DOUBLE_TL, // 0
+        setRow(32, DOUBLE_CORNER_TL, // 0
                 DOUBLE_T, // 1
                 DOUBLE_T, // 2
                 DOUBLE_T, // 3
@@ -55,8 +55,8 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 DOUBLE_T, // 10
                 DOUBLE_T, // 11
                 DOUBLE_T, // 12
-                DOUBLE_L_STRAIGHT_T_BL, // 13
-                DOUBLE_L_STRAIGHT_T_BR, // 14
+                INNER_CORNER_BL_BORDER_T, // 13
+                INNER_CORNER_BR_BORDER_T, // 14
                 DOUBLE_T, // 15
                 DOUBLE_T, // 16
                 DOUBLE_T, // 17
@@ -69,7 +69,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 DOUBLE_T, // 24
                 DOUBLE_T, // 25
                 DOUBLE_T, // 26
-                DOUBLE_TR // 27
+                DOUBLE_CORNER_TR // 27
         );
         setRow(31, DOUBLE_L, // 0
                 null, // 1
@@ -102,30 +102,30 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         );
         setRow(30, DOUBLE_L, // 0
                 null, // 1
-                SINGLE_TL, // 2
+                OUTER_CORNER_TL, // 2
                 SINGLE_T, // 3
                 SINGLE_T, // 4
-                SINGLE_TR, // 5
+                OUTER_CORNER_TR, // 5
                 null, // 6
-                SINGLE_TL, // 7
+                OUTER_CORNER_TL, // 7
                 SINGLE_T, // 8
                 SINGLE_T, // 9
                 SINGLE_T, // 10
-                SINGLE_TR, // 11
+                OUTER_CORNER_TR, // 11
                 null, // 12
                 SINGLE_L, // 13
                 SINGLE_R, // 14
                 null, // 15
-                SINGLE_TL, // 16
+                OUTER_CORNER_TL, // 16
                 SINGLE_T, // 17
                 SINGLE_T, // 18
                 SINGLE_T, // 19
-                SINGLE_TR, // 20
+                OUTER_CORNER_TR, // 20
                 null, // 21
-                SINGLE_TL, // 22
+                OUTER_CORNER_TL, // 22
                 SINGLE_T, // 23
                 SINGLE_T, // 24
-                SINGLE_TR, // 25
+                OUTER_CORNER_TR, // 25
                 null, // 26
                 DOUBLE_R // 27
         );
@@ -160,30 +160,30 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         );
         setRow(28, DOUBLE_L, // 0
                 null, // 1
-                SINGLE_BL, // 2
+                OUTER_CORNER_BL, // 2
                 SINGLE_B, // 3
                 SINGLE_B, // 4
-                SINGLE_BR, // 5
+                OUTER_CORNER_BR, // 5
                 null, // 6
-                SINGLE_BL, // 7
+                OUTER_CORNER_BL, // 7
                 SINGLE_B, // 8
                 SINGLE_B, // 9
                 SINGLE_B, // 10
-                SINGLE_BR, // 11
+                OUTER_CORNER_BR, // 11
                 null, // 12
-                SINGLE_BL, // 13
-                SINGLE_BR, // 14
+                OUTER_CORNER_BL, // 13
+                OUTER_CORNER_BR, // 14
                 null, // 15
-                SINGLE_BL, // 16
+                OUTER_CORNER_BL, // 16
                 SINGLE_B, // 17
                 SINGLE_B, // 18
                 SINGLE_B, // 19
-                SINGLE_BR, // 20
+                OUTER_CORNER_BR, // 20
                 null, // 21
-                SINGLE_BL, // 22
+                OUTER_CORNER_BL, // 22
                 SINGLE_B, // 23
                 SINGLE_B, // 24
-                SINGLE_BR, // 25
+                OUTER_CORNER_BR, // 25
                 null, // 26
                 DOUBLE_R // 27
         );
@@ -218,59 +218,59 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         );
         setRow(26, DOUBLE_L, // 0
                 null, // 1
-                SINGLE_TL, // 2
+                OUTER_CORNER_TL, // 2
                 SINGLE_T, // 3
                 SINGLE_T, // 4
-                SINGLE_TR, // 5
+                OUTER_CORNER_TR, // 5
                 null, // 6
-                SINGLE_TL, // 7
-                SINGLE_TR, // 8
+                OUTER_CORNER_TL, // 7
+                OUTER_CORNER_TR, // 8
                 null, // 9
-                SINGLE_TL, // 10
+                OUTER_CORNER_TL, // 10
                 SINGLE_T, // 11
                 SINGLE_T, // 12
                 SINGLE_T, // 13
                 SINGLE_T, // 14
                 SINGLE_T, // 15
                 SINGLE_T, // 16
-                SINGLE_TR, // 17
+                OUTER_CORNER_TR, // 17
                 null, // 18
-                SINGLE_TL, // 19
-                SINGLE_TR, // 20
+                OUTER_CORNER_TL, // 19
+                OUTER_CORNER_TR, // 20
                 null, // 21
-                SINGLE_TL, // 22
+                OUTER_CORNER_TL, // 22
                 SINGLE_T, // 23
                 SINGLE_T, // 24
-                SINGLE_TR, // 25
+                OUTER_CORNER_TR, // 25
                 null, // 26
                 DOUBLE_R // 27
         );
         setRow(25, DOUBLE_L, // 0
                 null, // 1
-                SINGLE_BL, // 2
+                OUTER_CORNER_BL, // 2
                 SINGLE_B, // 3
                 SINGLE_B, // 4
-                SINGLE_BR, // 5
+                OUTER_CORNER_BR, // 5
                 null, // 6
                 SINGLE_L, // 7
                 SINGLE_R, // 8
                 null, // 9
-                SINGLE_BL, // 10
+                OUTER_CORNER_BL, // 10
                 SINGLE_B, // 11
                 SINGLE_B, // 12
-                SINGLE_BULGE_BL, // 13
-                SINGLE_BULGE_BR, // 14
+                INNER_CORNER_BL, // 13
+                INNER_CORNER_BR, // 14
                 SINGLE_B, // 15
                 SINGLE_B, // 16
-                SINGLE_BR, // 17
+                OUTER_CORNER_BR, // 17
                 null, // 18
                 SINGLE_L, // 19
                 SINGLE_R, // 20
                 null, // 21
-                SINGLE_BL, // 22
+                OUTER_CORNER_BL, // 22
                 SINGLE_B, // 23
                 SINGLE_B, // 24
-                SINGLE_BR, // 25
+                OUTER_CORNER_BR, // 25
                 null, // 26
                 DOUBLE_R // 27
         );
@@ -303,7 +303,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 26
                 DOUBLE_R // 27
         );
-        setRow(23, DOUBLE_BL, // 0
+        setRow(23, DOUBLE_CORNER_BL, // 0
                 DOUBLE_B, // 1
                 DOUBLE_B, // 2
                 DOUBLE_B, // 3
@@ -330,7 +330,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 DOUBLE_B, // 24
                 DOUBLE_B, // 25
                 DOUBLE_B, // 26
-                DOUBLE_BR // 27
+                DOUBLE_CORNER_BR // 27
         );
         setRow(22, null, // 0
                 null, // 1
@@ -680,12 +680,41 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 26
                 null // 27
         );
-        setRow(10, null, // 0
+        setRow(10, DOUBLE_L, // 0
+                null, // 1
+                OUTER_CORNER_BL, // 2
+                SINGLE_B, // 3
+                INNER_CORNER_BL, // 4
+                SINGLE_R, // 5
+                null, // 6
+                OUTER_CORNER_BL, // 7
+                SINGLE_B, // 8
+                SINGLE_B, // 9
+                SINGLE_B, // 10
+                OUTER_CORNER_BR, // 11
+                null, // 12
+                OUTER_CORNER_BL, // 13
+                OUTER_CORNER_BR, // 14
+                null, // 15
+                OUTER_CORNER_BL, // 16
+                SINGLE_B, // 17
+                SINGLE_B, // 18
+                SINGLE_B, // 19
+                OUTER_CORNER_BR, // 20
+                null, // 21
+                SINGLE_L, // 22
+                INNER_CORNER_BR, // 23
+                SINGLE_B, // 24
+                OUTER_CORNER_BR, // 25
+                null, // 26
+                DOUBLE_R // 27
+        );
+        setRow(9, DOUBLE_L, // 0
                 null, // 1
                 null, // 2
                 null, // 3
-                null, // 4
-                null, // 5
+                SINGLE_L, // 4
+                SINGLE_R, // 5
                 null, // 6
                 null, // 7
                 null, // 8
@@ -702,150 +731,92 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 19
                 null, // 20
                 null, // 21
-                null, // 22
-                null, // 23
+                SINGLE_L, // 22
+                SINGLE_R, // 23
                 null, // 24
                 null, // 25
                 null, // 26
-                null // 27
+                DOUBLE_R // 27
         );
-        setRow(9, null, // 0
+        setRow(8, INNER_CORNER_TR_BORDER_L, // 0
+                SINGLE_T, // 1
+                OUTER_CORNER_TR, // 2
+                null, // 3
+                SINGLE_L, // 4
+                SINGLE_R, // 5
+                null, // 6
+                OUTER_CORNER_TL, // 7
+                OUTER_CORNER_TR, // 8
+                null, // 9
+                OUTER_CORNER_TL, // 10
+                SINGLE_T, // 11
+                SINGLE_T, // 12
+                SINGLE_T, // 13
+                SINGLE_T, // 14
+                SINGLE_T, // 15
+                SINGLE_T, // 16
+                OUTER_CORNER_TR, // 17
+                null, // 18
+                OUTER_CORNER_TL, // 19
+                OUTER_CORNER_TR, // 20
+                null, // 21
+                SINGLE_L, // 22
+                SINGLE_R, // 23
+                null, // 24
+                OUTER_CORNER_TL, // 25
+                SINGLE_T, // 26
+                INNER_CORNER_TL_BORDER_R // 27
+        );
+        setRow(7, INNER_CORNER_BR_BORDER_L, // 0
+                SINGLE_B, // 1
+                OUTER_CORNER_BR, // 2
+                null, // 3
+                OUTER_CORNER_BL, // 4
+                OUTER_CORNER_BR, // 5
+                null, // 6
+                SINGLE_L, // 7
+                SINGLE_R, // 8
+                null, // 9
+                OUTER_CORNER_BL, // 10
+                SINGLE_B, // 11
+                SINGLE_B, // 12
+                INNER_CORNER_BL, // 13
+                INNER_CORNER_BR, // 14
+                SINGLE_B, // 15
+                SINGLE_B, // 16
+                OUTER_CORNER_BR, // 17
+                null, // 18
+                SINGLE_L, // 19
+                SINGLE_R, // 20
+                null, // 21
+                OUTER_CORNER_BL, // 22
+                OUTER_CORNER_BR, // 23
+                null, // 24
+                OUTER_CORNER_BL, // 25
+                SINGLE_B, // 26
+                INNER_CORNER_BL_BORDER_R // 27
+        );
+        setRow(6, DOUBLE_L, // 0
                 null, // 1
                 null, // 2
                 null, // 3
                 null, // 4
                 null, // 5
                 null, // 6
-                null, // 7
-                null, // 8
+                SINGLE_L, // 7
+                SINGLE_R, // 8
                 null, // 9
                 null, // 10
                 null, // 11
                 null, // 12
-                null, // 13
-                null, // 14
+                SINGLE_L, // 13
+                SINGLE_R, // 14
                 null, // 15
                 null, // 16
                 null, // 17
                 null, // 18
-                null, // 19
-                null, // 20
-                null, // 21
-                null, // 22
-                null, // 23
-                null, // 24
-                null, // 25
-                null, // 26
-                null // 27
-        );
-        setRow(8, null, // 0
-                null, // 1
-                null, // 2
-                null, // 3
-                null, // 4
-                null, // 5
-                null, // 6
-                null, // 7
-                null, // 8
-                null, // 9
-                null, // 10
-                null, // 11
-                null, // 12
-                null, // 13
-                null, // 14
-                null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
-                null, // 21
-                null, // 22
-                null, // 23
-                null, // 24
-                null, // 25
-                null, // 26
-                null // 27
-        );
-        setRow(7, null, // 0
-                null, // 1
-                null, // 2
-                null, // 3
-                null, // 4
-                null, // 5
-                null, // 6
-                null, // 7
-                null, // 8
-                null, // 9
-                null, // 10
-                null, // 11
-                null, // 12
-                null, // 13
-                null, // 14
-                null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
-                null, // 21
-                null, // 22
-                null, // 23
-                null, // 24
-                null, // 25
-                null, // 26
-                null // 27
-        );
-        setRow(6, null, // 0
-                null, // 1
-                null, // 2
-                null, // 3
-                null, // 4
-                null, // 5
-                null, // 6
-                null, // 7
-                null, // 8
-                null, // 9
-                null, // 10
-                null, // 11
-                null, // 12
-                null, // 13
-                null, // 14
-                null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
-                null, // 21
-                null, // 22
-                null, // 23
-                null, // 24
-                null, // 25
-                null, // 26
-                null // 27
-        );
-        setRow(5, DOUBLE_L, // 0
-                null, // 1
-                SINGLE_TL, // 2
-                SINGLE_T, // 3
-                SINGLE_T, // 4
-                SINGLE_T, // 5
-                SINGLE_T, // 6
-                SINGLE_BULGE_TL, // 7
-                SINGLE_BULGE_TR, // 8
-                SINGLE_T, // 9
-                SINGLE_T, // 10
-                SINGLE_TR, // 11
-                null, // 12
-                null, // 13
-                null, // 14
-                null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
+                SINGLE_L, // 19
+                SINGLE_R, // 20
                 null, // 21
                 null, // 22
                 null, // 23
@@ -854,9 +825,38 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 26
                 DOUBLE_R // 27
         );
+        setRow(5, DOUBLE_L, // 0
+                null, // 1
+                OUTER_CORNER_TL, // 2
+                SINGLE_T, // 3
+                SINGLE_T, // 4
+                SINGLE_T, // 5
+                SINGLE_T, // 6
+                INNER_CORNER_TL, // 7
+                INNER_CORNER_TR, // 8
+                SINGLE_T, // 9
+                SINGLE_T, // 10
+                OUTER_CORNER_TR, // 11
+                null, // 12
+                SINGLE_L, // 13
+                SINGLE_R, // 14
+                null, // 15
+                OUTER_CORNER_TL, // 16
+                SINGLE_T, // 17
+                SINGLE_T, // 18
+                INNER_CORNER_TL, // 19
+                INNER_CORNER_TR, // 20
+                SINGLE_T, // 21
+                SINGLE_T, // 22
+                SINGLE_T, // 23
+                SINGLE_T, // 24
+                OUTER_CORNER_TR, // 25
+                null, // 26
+                DOUBLE_R // 27
+        );
         setRow(4, DOUBLE_L, // 0
                 null, // 1
-                SINGLE_BL, // 2
+                OUTER_CORNER_BL, // 2
                 SINGLE_B, // 3
                 SINGLE_B, // 4
                 SINGLE_B, // 5
@@ -865,12 +865,12 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 SINGLE_B, // 8
                 SINGLE_B, // 9
                 SINGLE_B, // 10
-                SINGLE_BR, // 11
+                OUTER_CORNER_BR, // 11
                 null, // 12
-                SINGLE_BL, // 13
-                SINGLE_BR, // 14
+                OUTER_CORNER_BL, // 13
+                OUTER_CORNER_BR, // 14
                 null, // 15
-                SINGLE_BL, // 16
+                OUTER_CORNER_BL, // 16
                 SINGLE_B, // 17
                 SINGLE_B, // 18
                 SINGLE_B, // 19
@@ -879,7 +879,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 SINGLE_B, // 22
                 SINGLE_B, // 23
                 SINGLE_B, // 24
-                SINGLE_BR, // 25
+                OUTER_CORNER_BR, // 25
                 null, // 26
                 DOUBLE_R // 27
         );
@@ -912,7 +912,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 26
                 DOUBLE_R // 27
         );
-        setRow(2, DOUBLE_BL, // 0
+        setRow(2, DOUBLE_CORNER_BL, // 0
                 DOUBLE_B, // 1
                 DOUBLE_B, // 2
                 DOUBLE_B, // 3
@@ -939,7 +939,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 DOUBLE_B, // 24
                 DOUBLE_B, // 25
                 DOUBLE_B, // 26
-                DOUBLE_BR // 27
+                DOUBLE_CORNER_BR // 27
         );
         screenshot = new Image("images/screenshots/IngameReady.png", 8);
         screenshot.setVisible(false);
@@ -964,59 +964,6 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         image.setPosition(x, y);
         image.makeStatic();
         add(image);
-    }
-
-    /**
-     * Zeichne horizontal von links nach rechts.
-     *
-     * @param brick  Ein Baustein des Labyrinths.
-     * @param x      Die x-Koordinate der linken Ecke.
-     * @param y      Die y-Koordinate der linken Ecke.
-     * @param length Die Länge der Linie.
-     */
-    private void drawHorizontal(Brick brick, int x, int y, int length)
-    {
-        for (int i = 0; i < length; i++)
-        {
-            setBrick(brick, x + i, y);
-        }
-    }
-
-    /**
-     * Zeichne vertikal von unten nach oben.
-     *
-     * @param brick  Ein Baustein des Labyrinths.
-     * @param x      Die x-Koordinate der unteren Ecke.
-     * @param y      Die y-Koordinate der unteren Ecke.
-     * @param length Die Länge der Linie.
-     */
-    private void drawVertical(Brick brick, int x, int y, int length)
-    {
-        for (int i = 0; i < length; i++)
-        {
-            setBrick(brick, x, y + i);
-        }
-    }
-
-    private void drawRoundedRectangle(int x, int y, int width, int height)
-    {
-        if (width < 2 || height < 2)
-        {
-            throw new RuntimeException(
-                    "width und height muss mindestens 2 sein.");
-        }
-        // linke untere Ecke
-        setBrick(SINGLE_BL, x, y);
-        drawHorizontal(SINGLE_B, x + 1, y, width - 2);
-        // linke untere Ecke
-        setBrick(SINGLE_BR, x + width - 1, y);
-        drawVertical(SINGLE_R, x + width - 1, y + 1, height - 2);
-        // linke obere Ecke
-        setBrick(SINGLE_TL, x, y + height - 1);
-        drawHorizontal(SINGLE_T, x + 1, y + height - 1, width - 2);
-        // rechte obere Ecke
-        setBrick(SINGLE_TR, x + width - 1, y + height - 1);
-        drawVertical(SINGLE_L, x, y + 1, height - 2);
     }
 
     @Override
