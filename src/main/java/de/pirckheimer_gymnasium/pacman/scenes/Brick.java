@@ -27,8 +27,8 @@ public enum Brick
     SINGLE_TL("single_TL", "R 0.5, 0, 0.5, 0.5"),
     SINGLE_TR("single_TR", "R 0, 0, 0.5, 0.5"),
     // bulge = Ausbuchtung
-    SINGLE_BULGE_BL("single_bulge_BL", "R 0.5, 0.5, 0.5, 0.5"),
-    SINGLE_BULGE_BR("single_bulge_BR", "R 0.5, 0.5, 0.5, 0.5"),
+    SINGLE_BULGE_BL("single_bulge_BL", "R0.5,0,0.5,0.5&R0,0.5,1,0.5"),
+    SINGLE_BULGE_BR("single_bulge_BR", "R0,0,0.5,0.5&R0,0.5,1,0.5"),
     SINGLE_BULGE_TL("single_bulge_TL", "R0,0,1,0.5 & R0.5,0.5,0.5,0.5"),
     SINGLE_BULGE_TR("single_bulge_TR", "R0,0,1,0.5 & R0,0.5,0.5,0.5");
 
