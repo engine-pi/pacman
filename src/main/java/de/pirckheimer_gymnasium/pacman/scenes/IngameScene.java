@@ -132,28 +132,28 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
         setRow(29, DOUBLE_L, // 0
                 null, // 1
                 SINGLE_L, // 2
-                null, // 3
-                null, // 4
+                FILL, // 3
+                FILL, // 4
                 SINGLE_R, // 5
                 null, // 6
                 SINGLE_L, // 7
-                null, // 8
-                null, // 9
-                null, // 10
+                FILL, // 8
+                FILL, // 9
+                FILL, // 10
                 SINGLE_R, // 11
                 null, // 12
                 SINGLE_L, // 13
                 SINGLE_R, // 14
                 null, // 15
                 SINGLE_L, // 16
-                null, // 17
-                null, // 18
-                null, // 19
+                FILL, // 17
+                FILL, // 18
+                FILL, // 19
                 SINGLE_R, // 20
                 null, // 21
                 SINGLE_L, // 22
-                null, // 23
-                null, // 24
+                FILL, // 23
+                FILL, // 24
                 SINGLE_R, // 25
                 null, // 26
                 DOUBLE_R // 27
@@ -403,8 +403,8 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 CORNER_TL, // 10
                 DOUBLE_B, // 11
                 DOUBLE_B, // 12
-                null, // 13
-                null, // 14
+                GATE, // 13
+                GATE, // 14
                 DOUBLE_B, // 15
                 DOUBLE_B, // 16
                 CORNER_TR, // 17
