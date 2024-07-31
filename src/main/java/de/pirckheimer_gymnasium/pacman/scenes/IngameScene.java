@@ -41,7 +41,7 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 System.out.println(event);
             }
         });
-        add(ghost);
+        // add(ghost);
         setRow(32, DOUBLE_CORNER_TL, // 0
                 DOUBLE_T, // 1
                 DOUBLE_T, // 2
@@ -366,10 +366,10 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 2
                 null, // 3
                 null, // 4
-                null, // 5
+                DOUBLE_L, // 5
                 null, // 6
-                null, // 7
-                null, // 8
+                SINGLE_L, // 7
+                SINGLE_R, // 8
                 null, // 9
                 null, // 10
                 null, // 11
@@ -380,10 +380,10 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 16
                 null, // 17
                 null, // 18
-                null, // 19
-                null, // 20
+                SINGLE_L, // 19
+                SINGLE_R, // 20
                 null, // 21
-                null, // 22
+                DOUBLE_R, // 22
                 null, // 23
                 null, // 24
                 null, // 25
@@ -511,24 +511,24 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 2
                 null, // 3
                 null, // 4
-                null, // 5
+                DOUBLE_L, // 5
                 null, // 6
-                null, // 7
-                null, // 8
+                SINGLE_L, // 7
+                SINGLE_R, // 8
                 null, // 9
-                null, // 10
-                null, // 11
-                null, // 12
-                null, // 13
-                null, // 14
-                null, // 15
-                null, // 16
-                null, // 17
+                CORNER_BL, // 10
+                DOUBLE_T, // 11
+                DOUBLE_T, // 12
+                DOUBLE_T, // 13
+                DOUBLE_T, // 14
+                DOUBLE_T, // 15
+                DOUBLE_T, // 16
+                CORNER_BR, // 17
                 null, // 18
-                null, // 19
-                null, // 20
+                SINGLE_L, // 19
+                SINGLE_R, // 20
                 null, // 21
-                null, // 22
+                DOUBLE_R, // 22
                 null, // 23
                 null, // 24
                 null, // 25
@@ -540,10 +540,10 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 2
                 null, // 3
                 null, // 4
-                null, // 5
+                DOUBLE_L, // 5
                 null, // 6
-                null, // 7
-                null, // 8
+                SINGLE_L, // 7
+                SINGLE_R, // 8
                 null, // 9
                 null, // 10
                 null, // 11
@@ -554,10 +554,10 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 16
                 null, // 17
                 null, // 18
-                null, // 19
-                null, // 20
+                SINGLE_L, // 19
+                SINGLE_R, // 20
                 null, // 21
-                null, // 22
+                DOUBLE_R, // 22
                 null, // 23
                 null, // 24
                 null, // 25
@@ -569,31 +569,60 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 2
                 null, // 3
                 null, // 4
-                null, // 5
+                DOUBLE_L, // 5
                 null, // 6
-                null, // 7
-                null, // 8
+                SINGLE_L, // 7
+                SINGLE_R, // 8
                 null, // 9
-                null, // 10
-                null, // 11
-                null, // 12
-                null, // 13
-                null, // 14
-                null, // 15
-                null, // 16
-                null, // 17
+                OUTER_CORNER_TL, // 10
+                SINGLE_T, // 11
+                SINGLE_T, // 12
+                SINGLE_T, // 13
+                SINGLE_T, // 14
+                SINGLE_T, // 15
+                SINGLE_T, // 16
+                OUTER_CORNER_TR, // 17
                 null, // 18
-                null, // 19
-                null, // 20
+                SINGLE_L, // 19
+                SINGLE_R, // 20
                 null, // 21
-                null, // 22
+                DOUBLE_R, // 22
                 null, // 23
                 null, // 24
                 null, // 25
                 null, // 26
                 null // 27
         );
-        setRow(13, null, // 0
+        setRow(13, DOUBLE_CORNER_TL, // 0
+                DOUBLE_T, // 1
+                DOUBLE_T, // 2
+                DOUBLE_T, // 3
+                DOUBLE_T, // 4
+                OUTER_CORNER_BR, // 5
+                null, // 6
+                OUTER_CORNER_BL, // 7
+                OUTER_CORNER_BR, // 8
+                null, // 9
+                OUTER_CORNER_BL, // 10
+                SINGLE_B, // 11
+                SINGLE_B, // 12
+                INNER_CORNER_BL, // 13
+                INNER_CORNER_BR, // 14
+                SINGLE_B, // 15
+                SINGLE_B, // 16
+                OUTER_CORNER_BR, // 17
+                null, // 18
+                OUTER_CORNER_BL, // 19
+                OUTER_CORNER_BR, // 20
+                null, // 21
+                OUTER_CORNER_BL, // 22
+                DOUBLE_T, // 23
+                DOUBLE_T, // 24
+                DOUBLE_T, // 25
+                DOUBLE_T, // 26
+                DOUBLE_CORNER_TR // 27
+        );
+        setRow(12, DOUBLE_L, // 0
                 null, // 1
                 null, // 2
                 null, // 3
@@ -606,8 +635,8 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 10
                 null, // 11
                 null, // 12
-                null, // 13
-                null, // 14
+                SINGLE_L, // 13
+                SINGLE_R, // 14
                 null, // 15
                 null, // 16
                 null, // 17
@@ -620,65 +649,36 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 24
                 null, // 25
                 null, // 26
-                null // 27
+                DOUBLE_R // 27
         );
-        setRow(12, null, // 0
+        setRow(11, DOUBLE_L, // 0
                 null, // 1
-                null, // 2
-                null, // 3
-                null, // 4
-                null, // 5
+                OUTER_CORNER_TL, // 2
+                SINGLE_T, // 3
+                SINGLE_T, // 4
+                OUTER_CORNER_TR, // 5
                 null, // 6
-                null, // 7
-                null, // 8
-                null, // 9
-                null, // 10
-                null, // 11
+                OUTER_CORNER_TL, // 7
+                SINGLE_T, // 8
+                SINGLE_T, // 9
+                SINGLE_T, // 10
+                OUTER_CORNER_TR, // 11
                 null, // 12
-                null, // 13
-                null, // 14
+                SINGLE_L, // 13
+                SINGLE_R, // 14
                 null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
+                OUTER_CORNER_TL, // 16
+                SINGLE_T, // 17
+                SINGLE_T, // 18
+                SINGLE_T, // 19
+                OUTER_CORNER_TR, // 20
                 null, // 21
-                null, // 22
-                null, // 23
-                null, // 24
-                null, // 25
+                OUTER_CORNER_TL, // 22
+                SINGLE_T, // 23
+                SINGLE_T, // 24
+                OUTER_CORNER_TR, // 25
                 null, // 26
-                null // 27
-        );
-        setRow(11, null, // 0
-                null, // 1
-                null, // 2
-                null, // 3
-                null, // 4
-                null, // 5
-                null, // 6
-                null, // 7
-                null, // 8
-                null, // 9
-                null, // 10
-                null, // 11
-                null, // 12
-                null, // 13
-                null, // 14
-                null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
-                null, // 21
-                null, // 22
-                null, // 23
-                null, // 24
-                null, // 25
-                null, // 26
-                null // 27
+                DOUBLE_R // 27
         );
         setRow(10, DOUBLE_L, // 0
                 null, // 1
