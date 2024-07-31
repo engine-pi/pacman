@@ -308,24 +308,24 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 DOUBLE_B, // 2
                 DOUBLE_B, // 3
                 DOUBLE_B, // 4
-                null, // 5
+                OUTER_CORNER_TR, // 5
                 null, // 6
-                null, // 7
-                null, // 8
-                null, // 9
-                null, // 10
-                null, // 11
+                SINGLE_L, // 7
+                INNER_CORNER_TR, // 8
+                SINGLE_T, // 9
+                SINGLE_T, // 10
+                OUTER_CORNER_TR, // 11
                 null, // 12
-                null, // 13
-                null, // 14
+                SINGLE_L, // 13
+                SINGLE_R, // 14
                 null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
+                OUTER_CORNER_TL, // 16
+                SINGLE_T, // 17
+                SINGLE_T, // 18
+                INNER_CORNER_TL, // 19
+                SINGLE_R, // 20
                 null, // 21
-                null, // 22
+                OUTER_CORNER_TL, // 22
                 DOUBLE_B, // 23
                 DOUBLE_B, // 24
                 DOUBLE_B, // 25
@@ -337,24 +337,24 @@ public class IngameScene extends BaseScene implements KeyStrokeListener
                 null, // 2
                 null, // 3
                 null, // 4
-                null, // 5
+                DOUBLE_L, // 5
                 null, // 6
-                null, // 7
-                null, // 8
-                null, // 9
-                null, // 10
-                null, // 11
+                SINGLE_L, // 7
+                INNER_CORNER_BR, // 8
+                SINGLE_B, // 9
+                SINGLE_B, // 10
+                OUTER_CORNER_BR, // 11
                 null, // 12
-                null, // 13
-                null, // 14
+                OUTER_CORNER_BL, // 13
+                OUTER_CORNER_BR, // 14
                 null, // 15
-                null, // 16
-                null, // 17
-                null, // 18
-                null, // 19
-                null, // 20
+                OUTER_CORNER_BL, // 16
+                SINGLE_B, // 17
+                SINGLE_B, // 18
+                INNER_CORNER_BL, // 19
+                SINGLE_R, // 20
                 null, // 21
-                null, // 22
+                DOUBLE_R, // 22
                 null, // 23
                 null, // 24
                 null, // 25
